@@ -1,0 +1,321 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  --backNav: #292929;
+  --backLighter: #414140;
+  --backDarker: #292929;
+  --mainColor1: #9acd32;
+  --mainColor2: #0eceeb;
+  --semiColor1: #7ccd59;
+  --semiColor2: #4fcd94;
+  --semiColor3: #21ced1;
+  --middleColor: #60cd7e;
+  --buttonBg: #b0b0b027;
+  --inputBg: #fafafa;
+  --changingFont: #ffffff;
+  --whiteFont: #ffffff;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: var(--backLighter);
+}
+
+body.light {
+  --backNav: #fff4d7;
+  --backLighter: #f4f4e4;
+  --backDarker: #b0b0b0;
+  --mainColor1: #fdd315;
+  --mainColor2: #c50c53;
+  --semiColor1: #fdad24;
+  --semiColor2: #f77935;
+  --semiColor3: #f4514b;
+  --middleColor: #e6822e;
+  --inputBg: #ffffff;
+  --changingFont: #3e3e3d;
+}
+
+@-webkit-keyframes floater {
+  0% {
+    bottom: 20%;
+  }
+  20% {
+    bottom: 14%;
+  }
+  40% {
+    bottom: 17%;
+  }
+  60% {
+    bottom: 12%;
+  }
+  80% {
+    bottom: 16%;
+  }
+  100% {
+    bottom: 20%;
+  }
+}
+
+@keyframes floater {
+  0% {
+    bottom: 20%;
+  }
+  20% {
+    bottom: 14%;
+  }
+  40% {
+    bottom: 17%;
+  }
+  60% {
+    bottom: 12%;
+  }
+  80% {
+    bottom: 16%;
+  }
+  100% {
+    bottom: 20%;
+  }
+}
+
+@-webkit-keyframes shaker {
+  0% {
+    right: 8%;
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+  20% {
+    -webkit-transform: scale(1.01) rotate(-1.4deg);
+            transform: scale(1.01) rotate(-1.4deg);
+    right: 9%;
+  }
+  40% {
+    -webkit-transform: scale(1.03) rotate(0.8deg);
+            transform: scale(1.03) rotate(0.8deg);
+    right: 7%;
+  }
+  60% {
+    -webkit-transform: scale(1.01) rotate(-0.6deg);
+            transform: scale(1.01) rotate(-0.6deg);
+    right: 8%;
+  }
+  80% {
+    -webkit-transform: scale(0.96) rotate(1.6deg);
+            transform: scale(0.96) rotate(1.6deg);
+    right: 6%;
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+    right: 8%;
+  }
+}
+
+@keyframes shaker {
+  0% {
+    right: 8%;
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+  20% {
+    -webkit-transform: scale(1.01) rotate(-1.4deg);
+            transform: scale(1.01) rotate(-1.4deg);
+    right: 9%;
+  }
+  40% {
+    -webkit-transform: scale(1.03) rotate(0.8deg);
+            transform: scale(1.03) rotate(0.8deg);
+    right: 7%;
+  }
+  60% {
+    -webkit-transform: scale(1.01) rotate(-0.6deg);
+            transform: scale(1.01) rotate(-0.6deg);
+    right: 8%;
+  }
+  80% {
+    -webkit-transform: scale(0.96) rotate(1.6deg);
+            transform: scale(0.96) rotate(1.6deg);
+    right: 6%;
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+    right: 8%;
+  }
+}
+
+.header {
+  position: relative;
+  background-image: linear-gradient(-45deg, var(--mainColor1), var(--mainColor2));
+  height: 100vh;
+  overflow: hidden;
+  max-width: 2566px;
+  margin: 0 auto;
+}
+
+.header > * {
+  position: absolute;
+}
+
+.header__border_landscape {
+  width: 100%;
+  bottom: -2px;
+  left: 0;
+}
+
+@media (orientation: portrait), (max-width: 600px) {
+  .header__border_landscape {
+    display: none;
+  }
+}
+
+.header__border_portrait {
+  display: none;
+}
+
+@media (orientation: portrait), (max-width: 600px) {
+  .header__border_portrait--bottom {
+    display: unset;
+    width: 100%;
+    height: auto;
+    bottom: -2px;
+    left: -2px;
+    right: unset;
+    top: unset;
+  }
+}
+
+@media (orientation: portrait), (max-width: 600px) {
+  .header__border_portrait--right {
+    display: unset;
+    height: 108%;
+    width: auto;
+    top: 0;
+    right: -2px;
+    left: unset;
+    bottom: unset;
+  }
+}
+
+.header__logo {
+  width: 42%;
+  top: unset;
+  left: unset;
+  bottom: 20%;
+  right: 8%;
+}
+
+@media (orientation: landscape) and (min-width: 1199px) {
+  .header__logo {
+    -webkit-animation: shaker 13s linear infinite 1s both, floater 17s linear infinite 1s both;
+            animation: shaker 13s linear infinite 1s both, floater 17s linear infinite 1s both;
+  }
+}
+
+@media (orientation: portrait), (max-width: 600px) {
+  .header__logo {
+    width: unset;
+    height: 56vh;
+    top: 14%;
+    left: 0;
+    bottom: unset;
+    right: unset;
+    -webkit-transform: translateX(-50%) scaleX(-1);
+            transform: translateX(-50%) scaleX(-1);
+  }
+}
+
+.header .welcome {
+  left: 12%;
+  bottom: 34%;
+  color: var(--changingFont);
+  font-size: 80px;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+@media (orientation: landscape) and (max-width: 1120px) {
+  .header .welcome {
+    left: 12%;
+    bottom: 24%;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1599px) {
+  .header .welcome {
+    left: 12%;
+    bottom: 32%;
+    font-size: 90px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 2200px) {
+  .header .welcome {
+    left: 12%;
+    bottom: 32%;
+    font-size: 120px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 3200px) {
+  .header .welcome {
+    left: 10%;
+    bottom: 22%;
+    font-size: 140px;
+  }
+}
+
+@media (orientation: portrait), (max-width: 600px) {
+  .header .welcome {
+    left: unset;
+    right: 13%;
+    bottom: 20%;
+    font-size: 46px;
+    font-weight: bold;
+    text-align: right;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 340px) {
+  .header .welcome {
+    font-size: 40px;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 600px) {
+  .header .welcome {
+    right: 16%;
+    bottom: 18%;
+    font-size: 86px;
+    font-weight: bold;
+  }
+}
+
+.header .welcome__name {
+  margin-top: 15px;
+  font-size: .7em;
+}
+
+.header .welcome__who {
+  font-size: .48em;
+  font-weight: normal;
+}
+
+@media (orientation: portrait), (max-width: 600px) {
+  .header .welcome__who {
+    margin-top: 10px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
