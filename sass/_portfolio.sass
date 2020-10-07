@@ -1,0 +1,179 @@
+@keyframes opac
+    0%
+        opacity: 0
+        top: 20%
+
+    50%
+        opacity: 0
+        top: 20%
+
+    100%
+        opacity: 1
+        top: 13%
+
+.portfolio
+    background-color: var(--backLighter)
+    text-align: center
+
+    .project
+        display: flex
+        margin: 0 auto 30px
+        max-width: 1400px
+        position: relative
+        z-index: 0
+        transition: transform .3s ease-in-out
+        &:hover
+            transform: scale(1.02)
+        &__web
+            width: 50%
+            background-color: var(--backDarker)
+            height: 500px
+            position: relative
+            border-radius: 20px
+            overflow: hidden
+            @media (orientation: portrait), (max-width: 600px)
+                width: 100%
+                height: 300px
+            &::before
+                content: ""
+                width: calc(100% - 30px)
+                height: calc(100% - 30px)
+                border-radius: 10px
+                background-image: url("../images/port_bg_dark.svg")
+                background-size: cover
+                position: absolute
+                z-index: 2
+                opacity: 1
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                @media (orientation: portrait), (max-width: 600px)
+                    width: calc(100% - 20px)
+                    height: calc(100% - 20px)
+            &:hover
+                .project__live
+                    .live__wrapper
+                        width: 22vh
+                        height: 22vh
+                        @media (min-width: 1600px)
+                            width: 20vh
+                            height: 20vh
+                        @media (min-width: 2200px)
+                            width: 18vh
+                            height: 18vh
+                        @media (min-width: 3200px)
+                            width: 16vh
+                            height: 16vh
+
+                        .live__text
+                            animation: opac 1.4s ease both
+
+                &::before
+                    transform: translate(-50%, -50%)
+
+            .web__questionmark
+                height: 60%
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                z-index: 15
+                @media (orientation: portrait), (max-width: 600px)
+                    width: 40%
+
+                &--anim_1:not(:first-of-type), &--anim_2:not(:first-of-type), &--anim_3:not(:first-of-type), &--anim_4:not(:first-of-type)
+                    opacity: 0
+                    transition: opacity .1s
+
+            .project__live
+                position: absolute
+                bottom: -10vh
+                right: -10vh
+
+                .live__wrapper
+                    position: absolute
+                    bottom: 0
+                    right: 0
+                    z-index: 3
+                    width: 10vh
+                    height: 10vh
+                    border-radius: 50%
+                    background-color: var(--backDarker)
+                    transition: .6s ease
+                    transform: rotate(-45deg)
+                    &:hover
+                        .live__text
+                            color: var(--semiColor1)
+                    .live__text
+                        position: absolute
+                        opacity: 0
+                        font-size: 1.2em
+                        color: var(--changingFont)
+                        text-decoration: none
+                        transition: opacity .6s .3s, color .3s
+                        top: 12%
+                        left: 50%
+                        transform: translateX(-50%)
+                        @media (orientation: portrait), (max-width: 600px)
+                            font-size: 1em
+
+        &:nth-of-type(odd)
+            background-color: var(--semiColor1)
+            border-radius: 0 20px
+            @media (orientation: portrait), (max-width: 600px)
+                flex-direction: column
+
+        &:nth-of-type(even)
+            background-color: var(--semiColor3)
+            flex-direction: row-reverse
+            border-radius: 20px 0
+            @media (orientation: portrait), (max-width: 600px)
+                flex-direction: column
+
+            &__about_project
+                text-align: right
+                margin-right: 0
+
+            .project__live
+                position: absolute
+                bottom: -10vh
+                right: unset
+                left: -10vh
+
+                .live__wrapper
+                    bottom: 0
+                    left: 0
+                    transform: rotate(45deg)
+                    &:hover
+                        .live__text
+                            color: var(--semiColor3)
+
+        &:last-of-type
+            margin-bottom: 0px
+
+        .about_project
+            color: var(--changingFont)
+            font-weight: normal
+            padding: 10px 20px 20px 20px
+            text-align: left
+            width: 50%
+            @media (orientation: portrait), (max-width: 600px)
+                padding: 20px 40px 40px 40px
+                width: 100%
+
+            &__title
+                border-bottom: 2px solid var(--changingFont)
+                margin-bottom: 12px
+                padding-bottom: 6px
+                font-size: 28px
+                text-transform: uppercase
+            &__description
+                font-size: 18px
+                @media (orientation: portrait), (max-width: 600px)
+                    font-size: 16px
+body.light
+    .portfolio
+        .project
+            &__web
+                &::before
+                    background-image: url("../images/port_bg_light.svg")

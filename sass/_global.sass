@@ -43,3 +43,112 @@ body.light
 
     --inputBg: #ffffff
     --changingFont: #3e3e3d
+
+section
+    min-height: 30vh
+
+.section_name
+    padding-top: 10vh
+    color: var(--semiColor1)
+    font-size: 60px
+    text-transform: uppercase
+    margin: 50px 0
+    margin-top: calc(-10vh + 50px)
+    @media (orientation: portrait), (max-width: 600px)
+        font-size: 40px
+
+    &--gradient
+        background-image: linear-gradient(-25deg, var(--mainColor1), var(--mainColor2))
+        background-attachment: fixed
+        -webkit-background-clip: text
+        background-clip: text
+        -webkit-text-fill-color: transparent
+
+.triangles_dark
+
+    &--normal
+        &::after
+            content: ""
+            position: absolute
+            z-index: 10
+            top: -2px
+            left: -2px
+            border-left: 100px solid var(--backLighter)
+            border-bottom: 100px solid transparent
+            @media (orientation: portrait), (max-width: 600px)
+                top: -2px
+                left: -30px
+        &::before
+            content: ""
+            position: absolute
+            z-index: 10
+            right: -2px
+            bottom: -2px
+            border-right: 100px solid var(--backLighter)
+            border-top: 100px solid transparent
+            @media (orientation: portrait), (max-width: 600px)
+                right: -30px
+                bottom: -2px
+
+    &--reverse
+        &::after
+            content: ""
+            position: absolute
+            z-index: 10
+            top: -2px
+            right: -2px
+            border-right: 100px solid var(--backLighter)
+            border-bottom: 100px solid transparent
+            @media (orientation: portrait), (max-width: 600px)
+                top: -2px
+                right: -30px
+        &::before
+            content: ""
+            position: absolute
+            z-index: 10
+            left: -2px
+            bottom: -2px
+            border-left: 100px solid var(--backLighter)
+            border-top: 100px solid transparent
+            @media (orientation: portrait), (max-width: 600px)
+                left: -30px
+                bottom: -2px
+
+.triangles_light
+
+    &--left
+        &::after
+            content: ""
+            position: absolute
+            z-index: 3
+            top: 9px
+            left: 9px
+            border-left: 100px solid var(--backDarker)
+            border-bottom: 100px solid transparent
+            @media (orientation: portrait), (max-width: 600px)
+                border-left: 66px solid var(--backDarker)
+                border-bottom: 66px solid transparent
+                top: 9px
+                left: 9px
+
+    &--right
+        &::after
+            content: ""
+            position: absolute
+            z-index: 3
+            top: 9px
+            right: 9px
+            border-right: 100px solid var(--backDarker)
+            border-bottom: 100px solid transparent
+            @media (orientation: portrait), (max-width: 600px)
+                top: 9px
+                right: 9px
+                border-right: 66px solid var(--backDarker)
+                border-bottom: 66px solid transparent
+
+.wrapper
+    overflow: hidden
+    max-width: 100%
+
+.content_wrapper
+    padding: 0 10px

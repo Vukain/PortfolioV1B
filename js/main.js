@@ -87,7 +87,7 @@ const animImages3 = document.querySelectorAll(".web__questionmark--anim_3");
 const animImages4 = document.querySelectorAll(".web__questionmark--anim_4");
 
 let quarter = projects[0].offsetHeight / 4;
-console.log(projects[0].offsetHeight)
+// console.log(projects[0].offsetHeight)
 let skillsPos = document.querySelector(".skills").offsetTop
 
 function drawingQue(animImages, i) {
@@ -152,9 +152,9 @@ window.addEventListener("scroll", scrollEventor)
 
 
 const borderToggle = document.querySelector(".extras__icon--diamond");
-const borderos = document.querySelector(".header__border--landscape");
-const borderPortBot = document.querySelector(".header__border--portrait_bottom");
-const borderPortRight = document.querySelector(".header__border--portrait_right");
+const borderos = document.querySelector(".header__border_landscape");
+const borderPortBot = document.querySelector(".header__border_portrait--bottom");
+const borderPortRight = document.querySelector(".header__border_portrait--right");
 
 const borders = [
     ["images/border.svg", "images/border_ver_bot_dark.svg", "images/border_ver_right_dark.svg"],
