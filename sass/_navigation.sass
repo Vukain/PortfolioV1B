@@ -17,15 +17,10 @@
 
         .arrow--back
             @media (orientation: landscape)
-                position: absolute
                 background-color: var(--middleColor)
-                width: 7vh
-                height: 7vh
-                left: 50%
-                bottom: 0
-                transform-origin: 50% 50%
-                transform: translate(-50%, 11%) scaleX(1.2) rotate(-45deg)
                 filter: blur(0px)
+                transform: translate(-50%, 11%) scaleX(1.2) rotate(-45deg)
+                @include arrow
 
     &--front
         margin-left: -6px
@@ -38,15 +33,10 @@
 
         .arrow--front
             @media (orientation: landscape)
-                position: absolute
                 background-color: var(--backNav)
-                width: 7vh
-                height: 7vh
-                left: 50%
-                bottom: 0
                 transition-duration: 0s
-                transform-origin: 50% 50%
                 transform: translate(-50%, 8%) scaleX(1.2) rotate(-45deg)
+                @include arrow
 
         .menu
             position: absolute

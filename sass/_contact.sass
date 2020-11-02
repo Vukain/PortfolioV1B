@@ -18,25 +18,17 @@
             background-color: var(--inputBg)
 
         &__input
-            font-size: 14px
-            border: 2px solid var(--semiColor3)
-            transition: .2s
-            color: #292929
+            @include form-text
             &:focus
                 border-radius: 10px
                 outline: none
                 border: 4px solid var(--semiColor1)
 
         &__text
-            font-size: 14px
             height: 120px
-            border: 2px solid var(--semiColor3)
-            transition: .2s
-            color: #292929
+            @include form-text
             &:focus
-                border-radius: 10px
-                outline: none
-                border: 4px solid var(--semiColor1)
+                @extend .form__input:focus
 
         &__button
             text-align: center
@@ -57,35 +49,16 @@
             overflow: hidden
             text-transform: uppercase
             &::after
-                content: ""
                 bottom: -100%
-                left: -10%
-                width: 120%
-                height: 0
-                position: absolute
-                background-image: linear-gradient(-45deg, var(--mainColor1), var(--mainColor2))
-                opacity: 0.6
-                z-index: -10
-                transition: .4s
-                transform: rotate(-10deg)
+                @include button-gradient
+
             &::before
-                content: ""
                 top: -100%
-                left: -10%
-                width: 120%
-                height: 0
-                position: absolute
-                background-image: linear-gradient(-45deg, var(--mainColor1), var(--mainColor2))
-                opacity: 0.6
-                z-index: -10
-                transition: .4s
-                transform: rotate(-10deg)
+                @include button-gradient
+
             &:hover
                 border: 2px solid var(--whiteFont)
-                &::after
-                    opacity: 1
-                    height: 200%
-                &::before
+                &::after, &::before
                     opacity: 1
                     height: 200%
 
