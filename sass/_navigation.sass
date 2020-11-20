@@ -14,9 +14,11 @@
         width: calc(100% + 12px)
         background-image: linear-gradient(-45deg, var(--mainColor1), var(--mainColor2))
         filter: blur(0px)
+        @media (orientation: landscape) and (max-width: 650px)
+            height: 44vh
 
         .arrow--back
-            @media (orientation: landscape)  and (min-width: 651px)
+            @media (orientation: landscape) and (min-width: 651px)
                 background-color: var(--middleColor)
                 filter: blur(0px)
                 transform: translate(-50%, 11%) scaleX(1.2) rotate(-45deg)
@@ -30,6 +32,8 @@
         position: absolute
         top: 0
         left: 0
+        @media (orientation: landscape) and (max-width: 650px)
+            height: calc(44vh - 4px)
 
         .arrow--front
             @media (orientation: landscape) and (min-width: 651px)
