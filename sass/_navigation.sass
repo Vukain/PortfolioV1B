@@ -16,7 +16,7 @@
         filter: blur(0px)
 
         .arrow--back
-            @media (orientation: landscape)
+            @media (orientation: landscape)  and (min-width: 651px)
                 background-color: var(--middleColor)
                 filter: blur(0px)
                 transform: translate(-50%, 11%) scaleX(1.2) rotate(-45deg)
@@ -32,7 +32,7 @@
         left: 0
 
         .arrow--front
-            @media (orientation: landscape)
+            @media (orientation: landscape) and (min-width: 651px)
                 background-color: var(--backNav)
                 transition-duration: 0s
                 transform: translate(-50%, 8%) scaleX(1.2) rotate(-45deg)
@@ -55,6 +55,10 @@
             @media (orientation: landscape)
                 @media (min-width: 1599px)
                     font-size: 2.6em
+                @media (min-width: 2200px)
+                    font-size: 3.8em
+                @media (min-width: 3200px)
+                    font-size: 4.6em
 
             &__link
                 color: var(--changingFont)
@@ -70,7 +74,7 @@
                 border-bottom: 2px solid currentColor
 
         .hamburger
-            @media (orientation: landscape)
+            @media (orientation: landscape) and (min-width: 651px)
                 position: absolute
                 top: 32.2vh
                 left: 50%
@@ -83,7 +87,7 @@
                     font-size: 3.8em
                 @media (min-width: 3200px)
                     font-size: 4.6em
-            @media (orientation: portrait), (max-width: 600px)
+            @media (orientation: portrait), (max-width: 650px)
                 top: 33.5vh
                 right: 6%
                 position: absolute
@@ -92,7 +96,7 @@
             &__segment
                 @media (orientation: landscape)
                     transition: .6s .4s linear
-                @media (orientation: portrait), (max-width: 600px)
+                @media (orientation: portrait), (max-width: 650px)
                     transition: .6s .4s linear
 
                 &--one
@@ -106,7 +110,7 @@
                             margin: 0px auto
                         @media (min-width: 3200px)
                             margin: 0px auto
-                    @media (orientation: portrait), (max-width: 600px)
+                    @media (orientation: portrait), (max-width: 650px)
                         width: 0px
                         margin: 0px auto
                         border-bottom: 0px solid var(--changingFont)
@@ -124,7 +128,7 @@
                             margin: 6px auto
                         @media (min-width: 3200px)
                             margin: 12px auto
-                    @media (orientation: portrait), (max-width: 600px)
+                    @media (orientation: portrait), (max-width: 650px)
                         width: 100%
                         margin: 3px auto
                         border-bottom: .9vw solid var(--changingFont)
@@ -142,7 +146,7 @@
                             margin: 6px auto
                         @media (min-width: 3200px)
                             margin: 12px auto
-                    @media (orientation: portrait), (max-width: 600px)
+                    @media (orientation: portrait), (max-width: 650px)
                         width: 100%
                         margin: 3px auto
                         border-top: 1.7vw solid var(--changingFont)
@@ -160,7 +164,7 @@
                             margin: 6px auto
                         @media (min-width: 3200px)
                             margin: 12px auto
-                    @media (orientation: portrait), (max-width: 600px)
+                    @media (orientation: portrait), (max-width: 650px)
                         width: 0px
                         margin: 3px auto
                         border-top: 2.2vw solid var(--changingFont)
@@ -199,7 +203,7 @@
                     font-size: 3.8em
                 @media (min-width: 3200px)
                     font-size: 4.6em
-                @media (orientation: portrait), (max-width: 600px)
+                @media (orientation: portrait), (max-width: 650px)
                     display: inline-block
                     font-size: 1.8em
                     margin: 0 6px
@@ -224,7 +228,7 @@
                     height: 56px
                 @media (min-width: 3200px)
                     height: 66px
-                @media (orientation: portrait), (max-width: 600px)
+                @media (orientation: portrait), (max-width: 650px)
                     display: inline-block
                     margin: 0 6px
                     height: 26px
@@ -278,7 +282,7 @@
 
 // can be made as &.active as a child element, tho visibility could suffer
 .navigation.active
-    @media (orientation: portrait), (max-width: 600px)
+    @media (orientation: portrait), (max-width: 650px)
         top: 0
 
         .navigation--back
