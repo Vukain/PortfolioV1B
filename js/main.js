@@ -37,8 +37,7 @@ const borders = [
 ];
 let bord = 1;
 
-const logo = document.querySelector(".header__logo")
-darkLight.addEventListener("click", () => {
+const switcher = () => {
     document.body.classList.toggle("light");
 
     if (document.body.className == "light") {
@@ -97,6 +96,16 @@ darkLight.addEventListener("click", () => {
         borderPortBot.setAttribute("src", borders[bord][1]);
         borderPortRight.setAttribute("src", borders[bord][2]);
     }
+}
+
+const logo = document.querySelector(".header__logo");
+
+// if (Math.random() > 0.5) {
+//     switcher();
+// }
+
+darkLight.addEventListener("click", () => {
+    switcher();
 })
 
 burger.addEventListener("click", () => {
