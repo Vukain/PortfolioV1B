@@ -8,9 +8,9 @@ if (sUsrAg.indexOf("Firefox") > -1) {
 }
 
 const queGreen = "images/que_green.svg";
-const queGreenAnim = ["images/que_green_an1.svg", "images/que_green_an2.svg", "images/que_green_an3.svg", "images/que_green_an4.svg", "images/que_green_an5.svg"];
+const queGreenAnim = ["images/que_yellow_an1.svg", "images/que_green_an2.svg", "images/que_green_an3.svg", "images/que_green_an4.svg", "images/que_green_an5.svg"];
 const queYellow = "images/que_yellow.svg";
-const queYellowAnim = ["images/que_yellow_an1.svg", "images/que_yellow_an2.svg", "images/que_yellow_an3.svg", "images/que_yellow_an4.svg", "images/que_yellow_an5.svg"];
+const queYellowAnim = ["images/que_green_an1.svg", "images/que_yellow_an2.svg", "images/que_yellow_an3.svg", "images/que_yellow_an4.svg", "images/que_yellow_an5.svg"];
 
 const queUno1 = document.querySelectorAll(".web__questionmark--one");
 const queUno2 = document.querySelectorAll(".web__questionmark--two");
@@ -26,6 +26,17 @@ const nav = document.querySelector("nav");
 const burger = document.querySelector(".hamburger");
 
 
+const borderToggle = document.querySelector(".extras__icon--diamond");
+const borderos = document.querySelector(".header__border_landscape");
+const borderPortBot = document.querySelector(".header__border_portrait--bottom");
+const borderPortRight = document.querySelector(".header__border_portrait--right");
+
+const borders = [
+    ["images/border.svg", "images/border_ver_bot_dark.svg", "images/border_ver_right_dark.svg"],
+    ["images/border_lgt.svg", "images/border_ver_bot_light.svg", "images/border_ver_right_light.svg"]
+];
+let bord = 1;
+
 const logo = document.querySelector(".header__logo")
 darkLight.addEventListener("click", () => {
     document.body.classList.toggle("light");
@@ -33,46 +44,58 @@ darkLight.addEventListener("click", () => {
     if (document.body.className == "light") {
         queUno1.forEach(function (img) {
             img.setAttribute("src", queYellowAnim[0])
-        })
+        });
         queUno2.forEach(function (img) {
             img.setAttribute("src", queYellowAnim[1])
-        })
+        });
         queUno3.forEach(function (img) {
             img.setAttribute("src", queYellowAnim[2])
-        })
+        });
         queUno4.forEach(function (img) {
             img.setAttribute("src", queYellowAnim[3])
-        })
+        });
         queUno5.forEach(function (img) {
             img.setAttribute("src", queYellowAnim[4])
-        })
+        });
 
         queDos.forEach(function (img) {
             img.setAttribute("src", queGreen)
-        })
-        logo.setAttribute("src", "images/logo_dark.svg")
+        });
+
+        logo.setAttribute("src", "images/logo_dark.svg");
+
+        bord = 0;
+        borderos.setAttribute("src", borders[bord][0]);
+        borderPortBot.setAttribute("src", borders[bord][1]);
+        borderPortRight.setAttribute("src", borders[bord][2]);
+
     } else {
         queUno1.forEach(function (img) {
             img.setAttribute("src", queGreenAnim[0])
-        })
+        });
         queUno2.forEach(function (img) {
             img.setAttribute("src", queGreenAnim[1])
-        })
+        });
         queUno3.forEach(function (img) {
             img.setAttribute("src", queGreenAnim[2])
-        })
+        });
         queUno4.forEach(function (img) {
             img.setAttribute("src", queGreenAnim[3])
-        })
+        });
         queUno5.forEach(function (img) {
             img.setAttribute("src", queGreenAnim[4])
-        })
+        });
 
         queDos.forEach(function (img) {
             img.setAttribute("src", queYellow)
+        });
 
-        })
-        logo.setAttribute("src", "images/logo_light.svg")
+        logo.setAttribute("src", "images/logo_light.svg");
+
+        bord = 1;
+        borderos.setAttribute("src", borders[bord][0]);
+        borderPortBot.setAttribute("src", borders[bord][1]);
+        borderPortRight.setAttribute("src", borders[bord][2]);
     }
 })
 
@@ -150,26 +173,15 @@ const scrollEventor = () => {
 
 window.addEventListener("scroll", scrollEventor)
 
-
-const borderToggle = document.querySelector(".extras__icon--diamond");
-const borderos = document.querySelector(".header__border_landscape");
-const borderPortBot = document.querySelector(".header__border_portrait--bottom");
-const borderPortRight = document.querySelector(".header__border_portrait--right");
-
-const borders = [
-    ["images/border.svg", "images/border_ver_bot_dark.svg", "images/border_ver_right_dark.svg"],
-    ["images/border_lgt.svg", "images/border_ver_bot_light.svg", "images/border_ver_right_light.svg"]
-];
-let bord = 1;
-
 borderToggle.addEventListener("click", () => {
-    borderos.setAttribute("src", borders[bord][0])
-    borderPortBot.setAttribute("src", borders[bord][1])
-    borderPortRight.setAttribute("src", borders[bord][2])
-    bord++
+    bord++;
     if (bord == 2) {
         bord = 0
     }
+
+    borderos.setAttribute("src", borders[bord][0]);
+    borderPortBot.setAttribute("src", borders[bord][1]);
+    borderPortRight.setAttribute("src", borders[bord][2]);
 })
 
 
