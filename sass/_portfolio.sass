@@ -2,6 +2,7 @@
 .portfolio
     background-color: var(--backLighter)
     text-align: center
+    position: relative
 
     .project
         display: flex
@@ -129,16 +130,26 @@
         &:hover
             transform: scale(1.02)
 
+        &:nth-of-type(1)
+            z-index: 99
+        &:nth-of-type(2)
+            z-index: 98
+        &:nth-of-type(3)
+            z-index: 97
+        &:nth-of-type(4)
+            z-index: 96
+
         &:nth-of-type(odd)
             background-color: var(--semiColor1)
-            border-radius: 0 20px
+            border-radius: 0 20px 140px 20px
             @media (orientation: portrait), (max-width: 600px)
                 flex-direction: column
 
         &:nth-of-type(even)
             background-color: var(--semiColor3)
             flex-direction: row-reverse
-            border-radius: 20px 0
+            border-radius: 20px 0 20px 140px
+
             @media (orientation: portrait), (max-width: 600px)
                 flex-direction: column
 

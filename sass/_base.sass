@@ -10,7 +10,7 @@ body
     // --backDarker: #292929
     --backDarker: #b0b0b0
 
-    --mainColor1: #9acd32
+    --mainColor1: #cacd32
     --mainColor2: #0eceeb
 
     --semiColor1: #7ccd59
@@ -139,17 +139,30 @@ section
             @media (orientation: portrait), (max-width: 600px)
                 top: -2px
                 left: -30px
+
         &::before
             content: ""
             position: absolute
             z-index: 10
-            right: -2px
-            bottom: -2px
-            border-right: 100px solid var(--backLighter)
-            border-top: 100px solid transparent
-            @media (orientation: portrait), (max-width: 600px)
-                right: -30px
-                bottom: -2px
+            right: -6%
+            bottom: -28%
+            width: 220px
+            height: 440px
+            background-image: url("../images/spikes_green.svg")
+            background-repeat: no-repeat
+            background-size: contain
+
+        // &::before
+        //     content: ""
+        //     position: absolute
+        //     z-index: 10
+        //     right: -2px
+        //     bottom: -2px
+        //     border-right: 100px solid var(--backLighter)
+        //     border-top: 100px solid transparent
+        //     @media (orientation: portrait), (max-width: 600px)
+        //         right: -30px
+        //         bottom: -2px
 
     &--reverse
         &::after
@@ -167,13 +180,26 @@ section
             content: ""
             position: absolute
             z-index: 10
-            left: -2px
-            bottom: -2px
-            border-left: 100px solid var(--backLighter)
-            border-top: 100px solid transparent
-            @media (orientation: portrait), (max-width: 600px)
-                left: -30px
-                bottom: -2px
+            left: -6%
+            bottom: -28%
+            width: 220px
+            height: 440px
+            background-image: url("../images/spikes_blue.svg")
+            background-repeat: no-repeat
+
+            background-size: contain
+
+        // &::before
+        //     content: ""
+        //     position: absolute
+        //     z-index: 10
+        //     left: -2px
+        //     bottom: -2px
+        //     border-left: 100px solid var(--backLighter)
+        //     border-top: 100px solid transparent
+        //     @media (orientation: portrait), (max-width: 600px)
+        //         left: -30px
+        //         bottom: -2px
 
 .triangles_light
 
