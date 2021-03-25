@@ -144,25 +144,13 @@ section
             content: ""
             position: absolute
             z-index: 10
-            right: -6%
-            bottom: -28%
-            width: 220px
-            height: 440px
+            right: -84px
+            bottom: -125px
+            width: 224px
+            height: 400px
             background-image: url("../images/spikes_green.svg")
             background-repeat: no-repeat
             background-size: contain
-
-        // &::before
-        //     content: ""
-        //     position: absolute
-        //     z-index: 10
-        //     right: -2px
-        //     bottom: -2px
-        //     border-right: 100px solid var(--backLighter)
-        //     border-top: 100px solid transparent
-        //     @media (orientation: portrait), (max-width: 600px)
-        //         right: -30px
-        //         bottom: -2px
 
     &--reverse
         &::after
@@ -180,26 +168,75 @@ section
             content: ""
             position: absolute
             z-index: 10
-            left: -6%
-            bottom: -28%
-            width: 220px
-            height: 440px
+            left: -84px
+            bottom: -125px
+            width: 224px
+            height: 400px
             background-image: url("../images/spikes_blue.svg")
             background-repeat: no-repeat
-
             background-size: contain
 
-        // &::before
-        //     content: ""
-        //     position: absolute
-        //     z-index: 10
-        //     left: -2px
-        //     bottom: -2px
-        //     border-left: 100px solid var(--backLighter)
-        //     border-top: 100px solid transparent
-        //     @media (orientation: portrait), (max-width: 600px)
-        //         left: -30px
-        //         bottom: -2px
+.light .triangles_dark
+
+    &--normal
+        &::before
+            background-image: url("../images/spikes_yellow.svg")
+
+    &--reverse
+        &::before
+            background-image: url("../images/spikes_red.svg")
+
+.triangles_pure
+
+    &--normal
+        &::after
+            content: ""
+            position: absolute
+            z-index: 10
+            top: -2px
+            left: -2px
+            border-left: 80px solid var(--backLighter)
+            border-bottom: 80px solid transparent
+            @media (orientation: portrait), (max-width: 600px)
+                top: -2px
+                left: -30px
+
+        &::before
+            content: ""
+            position: absolute
+            z-index: 10
+            right: -2px
+            bottom: -2px
+            border-right: 80px solid var(--backLighter)
+            border-top: 80px solid transparent
+            @media (orientation: portrait), (max-width: 600px)
+                right: -30px
+                bottom: -2px
+
+    &--reverse
+        &::after
+            content: ""
+            position: absolute
+            z-index: 10
+            top: -2px
+            right: -2px
+            border-right: 100px solid var(--backLighter)
+            border-bottom: 100px solid transparent
+            @media (orientation: portrait), (max-width: 600px)
+                top: -2px
+                right: -30px
+
+        &::before
+            content: ""
+            position: absolute
+            z-index: 10
+            left: -2px
+            bottom: -2px
+            border-left: 100px solid var(--backLighter)
+            border-top: 100px solid transparent
+            @media (orientation: portrait), (max-width: 600px)
+                left: -30px
+                bottom: -2px
 
 .triangles_light
 
