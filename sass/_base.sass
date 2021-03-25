@@ -151,6 +151,17 @@ section
             background-image: url("../images/spikes_green.svg")
             background-repeat: no-repeat
             background-size: contain
+            @media (orientation: portrait), (max-width: 600px)
+                right: 0
+                bottom: 0
+                width: 36%
+                height: 0
+                padding-top: calc(400 / 224 * 36%)
+                transform: scaleX(-1) translate(-13%, 49%) rotateZ(82deg)
+
+            @media (orientation: portrait) and (min-width: 601px)
+                height: 0
+                padding-top: 0
 
     &--reverse
         &::after
@@ -175,6 +186,19 @@ section
             background-image: url("../images/spikes_blue.svg")
             background-repeat: no-repeat
             background-size: contain
+            @media (orientation: portrait), (max-width: 600px)
+                left: 0
+                bottom: 0
+                width: 28%
+                height: 0
+                padding-top: calc(400 / 224 * 28%)
+                transform: translate(-19%, 38%) rotateZ(-12deg)
+
+                    // transform: scaleX(-1) translate(15%, 48%) rotateZ(-82deg);
+
+            @media (orientation: portrait) and (min-width: 601px)
+                height: 0
+                padding-top: 0
 
 .light .triangles_dark
 
