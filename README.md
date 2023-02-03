@@ -7,7 +7,7 @@ Main principle was to train conversion from one convention to another, as well a
 
 ## Features
 
-Two first navigation icons are responsible for color mode changing.
+Two first navigation icons are responsible for color theme changing.
 
 ## Live version
 
